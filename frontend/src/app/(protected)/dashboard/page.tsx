@@ -119,7 +119,7 @@ export default function DashboardPage() {
                 Unpublish
               </Button>
             ) : (
-              <Button variant="primary" size="sm" onClick={() => publish().then(() => toast.success('Published!'))}>
+              <Button variant="primary" size="sm" onClick={() => publish().then(() => toast.success('Published!')).catch((err: { error?: string }) => toast.error(err.error || 'Failed to publish'))}>
                 Publish
               </Button>
             )}

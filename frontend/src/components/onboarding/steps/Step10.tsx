@@ -45,8 +45,9 @@ export function Step10() {
       toast.success('Portfolio published!');
       store.reset();
       setTimeout(() => router.push('/dashboard'), 1500);
-    } catch {
-      toast.error('Failed to publish. Please try again.');
+    } catch (err: unknown) {
+      const e = err as { error?: string };
+      toast.error(e.error || 'Failed to publish. Please try again.');
     } finally {
       setPublishing(false);
     }
@@ -59,8 +60,9 @@ export function Step10() {
       toast.success('Saved as draft!');
       store.reset();
       router.push('/dashboard');
-    } catch {
-      toast.error('Failed to save.');
+    } catch (err: unknown) {
+      const e = err as { error?: string };
+      toast.error(e.error || 'Failed to save.');
     } finally {
       setSaving(false);
     }
