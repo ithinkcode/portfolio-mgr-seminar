@@ -29,13 +29,14 @@ export function EmberTheme({ portfolio, isPublic }: Props) {
   return (
     <div className="min-h-screen bg-[#faf5ef] text-[#2d1b0e]" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>
       {/* Hero */}
-      <section className="border-b border-[#e8ddd0] py-24 sm:py-32">
+      <section className="relative">
+        <div className="h-52 sm:h-56 bg-gradient-to-br from-[#8b2635]/15 via-[#f0e0d0] to-[#faf5ef]" />
         <div className="mx-auto max-w-4xl px-6 text-center">
           {portfolio.photoBase64 ? (
-            <motion.img {...fadeIn} src={portfolio.photoBase64} alt={name} className="mx-auto mb-6 h-28 w-28 rounded-full object-cover ring-4 ring-[#8b2635]/20" />
+            <motion.img {...fadeIn} src={portfolio.photoBase64} alt={name} className="mx-auto -mt-20 mb-6 h-36 w-36 rounded-full border-4 border-[#faf5ef] object-cover ring-4 ring-[#8b2635]/20" />
           ) : (
-            <motion.div {...fadeIn} className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-[#8b2635]/10 ring-4 ring-[#8b2635]/20">
-              <span className="text-3xl font-bold text-[#8b2635]">{initials}</span>
+            <motion.div {...fadeIn} className="mx-auto -mt-20 mb-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-[#faf5ef] bg-[#8b2635]/10 ring-4 ring-[#8b2635]/20">
+              <span className="text-4xl font-bold text-[#8b2635]">{initials}</span>
             </motion.div>
           )}
           <motion.h1 {...fadeIn} className="text-5xl font-bold sm:text-6xl text-[#8b2635]" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>{name}</motion.h1>

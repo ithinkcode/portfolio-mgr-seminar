@@ -30,14 +30,14 @@ export function ObsidianTheme({ portfolio, isPublic }: Props) {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-[#f0f0f0]">
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#d4a853]/5 to-transparent" />
-        <div className="relative mx-auto max-w-4xl px-6 text-center">
+      <section className="relative">
+        <div className="h-52 sm:h-56 bg-gradient-to-br from-[#d4a853]/15 via-[#1a1a2e] to-[#0a0a0f]" />
+        <div className="mx-auto max-w-4xl px-6 text-center">
           {portfolio.photoBase64 ? (
-            <motion.img {...fadeInUp} src={portfolio.photoBase64} alt={name} className="mx-auto mb-6 h-28 w-28 rounded-full object-cover ring-4 ring-[#d4a853]/30" />
+            <motion.img {...fadeInUp} src={portfolio.photoBase64} alt={name} className="mx-auto -mt-20 mb-6 h-36 w-36 rounded-full border-4 border-[#0a0a0f] object-cover ring-4 ring-[#d4a853]/30" />
           ) : (
-            <motion.div {...fadeInUp} className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-[#d4a853]/20 ring-4 ring-[#d4a853]/30">
-              <span className="font-display text-3xl font-bold text-[#d4a853]">{initials}</span>
+            <motion.div {...fadeInUp} className="mx-auto -mt-20 mb-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-[#0a0a0f] bg-[#d4a853]/20 ring-4 ring-[#d4a853]/30">
+              <span className="font-display text-4xl font-bold text-[#d4a853]">{initials}</span>
             </motion.div>
           )}
           <motion.h1 {...fadeInUp} className="font-display text-5xl font-bold sm:text-6xl">{name}</motion.h1>

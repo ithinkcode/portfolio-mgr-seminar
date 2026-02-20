@@ -29,13 +29,14 @@ export function ArcticTheme({ portfolio, isPublic }: Props) {
   return (
     <div className="min-h-screen bg-[#f8fafc] text-[#1a1a2e]">
       {/* Hero */}
-      <section className="border-b border-[#e2e8f0] py-24 sm:py-32">
+      <section className="relative">
+        <div className="h-52 sm:h-56 bg-gradient-to-br from-[#4da8da]/20 via-[#e0f0fa] to-[#f8fafc]" />
         <div className="mx-auto max-w-4xl px-6 text-center">
           {portfolio.photoBase64 ? (
-            <motion.img {...fadeIn} src={portfolio.photoBase64} alt={name} className="mx-auto mb-6 h-28 w-28 rounded-full object-cover ring-4 ring-[#4da8da]/20" />
+            <motion.img {...fadeIn} src={portfolio.photoBase64} alt={name} className="mx-auto -mt-20 mb-6 h-36 w-36 rounded-full border-4 border-[#f8fafc] object-cover ring-4 ring-[#4da8da]/20" />
           ) : (
-            <motion.div {...fadeIn} className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-[#4da8da]/10 ring-4 ring-[#4da8da]/20">
-              <span className="font-display text-3xl font-bold text-[#4da8da]">{initials}</span>
+            <motion.div {...fadeIn} className="mx-auto -mt-20 mb-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-[#f8fafc] bg-[#4da8da]/10 ring-4 ring-[#4da8da]/20">
+              <span className="font-display text-4xl font-bold text-[#4da8da]">{initials}</span>
             </motion.div>
           )}
           <motion.h1 {...fadeIn} className="font-display text-5xl font-bold sm:text-6xl text-[#1a1a2e]">{name}</motion.h1>
