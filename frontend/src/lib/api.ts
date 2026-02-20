@@ -124,8 +124,6 @@ export const api = {
     publish: () => fetchClient<Portfolio>('/api/portfolio/publish', { method: 'POST' }),
     unpublish: () => fetchClient<Portfolio>('/api/portfolio/unpublish', { method: 'POST' }),
     delete: () => fetchClient<void>('/api/portfolio', { method: 'DELETE' }),
-    parseResume: (text: string) => fetchClient<Partial<Portfolio>>('/api/portfolio/parse-resume', { method: 'POST', body: JSON.stringify({ resumeText: text }) }),
-
     async downloadPdf(): Promise<Blob> {
       const headers: Record<string, string> = {};
       if (accessToken) headers['Authorization'] = `Bearer ${accessToken}`;

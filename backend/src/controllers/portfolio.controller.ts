@@ -3,7 +3,7 @@ import { asyncHandler } from '../utils/asyncHandler';
 import * as portfolioService from '../services/portfolio.service';
 import { generatePortfolioHtml } from '../templates/portfolioPdf';
 import { generatePdf } from '../services/pdf.service';
-import { parseResume } from '../services/resumeParser.service';
+
 
 export const get = asyncHandler(async (req: Request, res: Response) => {
   const portfolio = await portfolioService.getByUserId(req.user!.id);
@@ -62,7 +62,3 @@ export const getPdf = asyncHandler(async (req: Request, res: Response) => {
   res.end(buffer);
 });
 
-export const parseResumeHandler = asyncHandler(async (req: Request, res: Response) => {
-  const result = parseResume(req.body.resumeText);
-  res.json({ data: result });
-});

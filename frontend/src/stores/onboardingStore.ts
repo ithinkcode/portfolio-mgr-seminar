@@ -23,7 +23,6 @@ interface OnboardingState {
   nextStep: () => void;
   prevStep: () => void;
   updateField: <K extends keyof OnboardingState>(key: K, value: OnboardingState[K]) => void;
-  prefillFromResume: (data: Partial<OnboardingState>) => void;
   reset: () => void;
 }
 
@@ -54,7 +53,6 @@ export const useOnboardingStore = create<OnboardingState>()(
       nextStep: () => set((s) => ({ currentStep: Math.min(s.currentStep + 1, 10) })),
       prevStep: () => set((s) => ({ currentStep: Math.max(s.currentStep - 1, 0) })),
       updateField: (key, value) => set({ [key]: value }),
-      prefillFromResume: (data) => set((s) => ({ ...s, ...data })),
       reset: () => set(initialState),
     }),
     {

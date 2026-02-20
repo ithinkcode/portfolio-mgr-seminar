@@ -73,7 +73,6 @@ async function start() {
     POST   /api/portfolio/unpublish
     DELETE /api/portfolio
     GET    /api/portfolio/pdf
-    POST   /api/portfolio/parse-resume
     GET    /api/public/portfolio/:slug
     GET    /api/health
 ========================================`);

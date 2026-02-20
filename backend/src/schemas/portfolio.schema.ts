@@ -72,10 +72,6 @@ export const updatePortfolioSchema = createPortfolioSchema;
 
 export const patchPortfolioSchema = createPortfolioSchema.partial();
 
-export const parseResumeSchema = z.object({
-  resumeText: z.string().min(1),
-});
-
 export type CreatePortfolioInput = z.infer<typeof createPortfolioSchema>;
 export type UpdatePortfolioInput = z.infer<typeof updatePortfolioSchema>;
 export type PatchPortfolioInput = z.infer<typeof patchPortfolioSchema>;

@@ -8,7 +8,7 @@ const features = [
   {
     icon: Wand2,
     title: 'Guided Builder',
-    description: 'Walk through simple questions about your experience, skills, and projects. Or paste your resume to get a head start.',
+    description: 'Walk through simple questions about your experience, skills, and projects. Step by step, we\u2019ll help you build something great.',
   },
   {
     icon: FileDown,
