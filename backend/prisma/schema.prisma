@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  portfolio    Portfolio?
+}
+
+model Portfolio {
+  id             String    @id @default(uuid())
+  userId         String    @unique
+  slug           String    @unique
+  headline       String
+  summary        String    @db.Text
+  photoBase64    String?   @db.Text
+  skills         Json
+  experience     Json
+  education      Json
+  projects       Json
+  certifications Json
+  languages      Json
+  contact        Json
+  theme          String    @default("obsidian")
+  isPublished    Boolean   @default(false)
+  publishedAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
