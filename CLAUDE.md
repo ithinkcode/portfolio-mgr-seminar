@@ -79,9 +79,10 @@ npm run lint         # next lint
 Dark mode default (`#0a0a0f` base, `#12121a` cards). Gold accent `#d4a853`, sage secondary `#7c9a82`. Typography-first with dramatic size contrast. Subtle grain/noise overlay. All animations respect `prefers-reduced-motion`.
 
 ### Portfolio Themes (same 3 as PDF)
-- **Obsidian:** dark + gold accents
-- **Arctic:** white + ice-blue `#4da8da`
-- **Ember:** cream `#faf5ef` + burgundy `#8b2635` + terracotta `#c46a4a`
+Each theme's public portfolio hero has a decorative gradient banner (`h-52 sm:h-56`) with the profile photo (`h-36 w-36`) overlapping its bottom edge via `-mt-20` and a `border-4` in the page background color.
+- **Obsidian:** dark + gold accents. Banner: `from-[#d4a853]/15 via-[#1a1a2e] to-[#0a0a0f]`
+- **Arctic:** white + ice-blue `#4da8da`. Banner: `from-[#4da8da]/20 via-[#e0f0fa] to-[#f8fafc]`
+- **Ember:** cream `#faf5ef` + burgundy `#8b2635` + terracotta `#c46a4a`. Banner: `from-[#8b2635]/15 via-[#f0e0d0] to-[#faf5ef]`
 
 ### API Client
 Typed client at `lib/api.ts` using native `fetch`. Auto-attaches JWT, handles 401 redirect, transparent token refresh. Base URL from `NEXT_PUBLIC_API_URL`.

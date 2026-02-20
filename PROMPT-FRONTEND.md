@@ -173,7 +173,7 @@ This is the heart of the product. The wizard transforms answers into a portfolio
 This is what gets shared. It must be portfolio-of-the-year quality.
 
 ### Layout (Obsidian Theme — default)
-- **Hero:** Full-width dark section with the person's name in massive display type, headline below, and profile photo in a circular frame with a subtle glow ring
+- **Hero:** Full-width decorative gradient banner (`h-52 sm:h-56`, `bg-gradient-to-br from-[#d4a853]/15 via-[#1a1a2e] to-[#0a0a0f]`) with the profile photo enlarged to 144px (`h-36 w-36`), overlapping the banner bottom edge via `-mt-20`, and a `border-4` in the page background color so it cleanly cuts into the banner. Name in massive display type and headline below the photo
 - **Summary:** Clean two-column — summary text on the left, contact links as icons on the right
 - **Skills:** Visual skill bars or a radar chart rendered with CSS (no chart library needed). Skills grouped by category with animated fill-on-scroll
 - **Experience:** Timeline layout with vertical line, dots for each role, dates on alternating sides. Each entry expands on click/hover to show highlights
@@ -185,8 +185,8 @@ This is what gets shared. It must be portfolio-of-the-year quality.
 All sections animate into view on scroll using Framer Motion's `whileInView` with staggered children.
 
 ### Theme Variations
-- **Arctic:** White backgrounds, light gray cards, ice-blue (#4da8da) accent color, clean sans-serif typography, sharp borders instead of glows
-- **Ember:** Warm cream (#faf5ef) background, burgundy (#8b2635) headings, terracotta (#c46a4a) accents, serif display font (Playfair Display), subtle paper texture overlay
+- **Arctic:** White backgrounds, light gray cards, ice-blue (#4da8da) accent color, clean sans-serif typography, sharp borders instead of glows. Hero gradient banner: `from-[#4da8da]/20 via-[#e0f0fa] to-[#f8fafc]`. Photo border: `border-[#f8fafc]`
+- **Ember:** Warm cream (#faf5ef) background, burgundy (#8b2635) headings, terracotta (#c46a4a) accents, serif display font (Playfair Display), subtle paper texture overlay. Hero gradient banner: `from-[#8b2635]/15 via-[#f0e0d0] to-[#faf5ef]`. Photo border: `border-[#faf5ef]`
 
 ---
 
