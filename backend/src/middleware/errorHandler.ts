@@ -55,6 +55,10 @@ export function errorHandler(err: AppError, _req: Request, res: Response, _next:
   const statusCode = err.statusCode || 500;
   const message = statusCode === 500 ? 'Internal server error' : err.message;
 
+  if (statusCode === 500) {
+    console.error('[500]', err.message, err.stack);
+  }
+
   res.status(statusCode).json({
     error: message,
     ...(env.NODE_ENV === 'development' && { details: err.stack }),
